@@ -1,0 +1,31 @@
+Conversations
+=============
+
+Always missed the nice conversation scope from jboss seam in rails development. This is a very lean implementation. 
+Basically, the method, conversation, wraps session returning only the hash for the current conversation. This 
+makes easy storing session data for request/response workflows that are more than a single page while continuing to 
+allow multiple instances of those workflows in the same session.
+
+Example
+=======
+
+class StuffController < ApplicationController
+
+  conversation :start => :start, :end => :end
+
+  def start
+    conversation[:moo] = :foo
+    conversation[:the_time] = Time.now
+  end
+
+  def end
+    conversation[:moo] # => nil
+  end
+
+  def middle
+    conversation[:moo] # => :foo
+  end
+
+end
+
+Copyright (c) 2009 Archie Cowan, released under the MIT license
