@@ -6,6 +6,11 @@ Basically, the method, conversation, wraps session returning only the hash for t
 makes easy storing session data for request/response workflows that are more than a single page while continuing to 
 allow multiple instances of those workflows in the same session.
 
+Install
+=======
+
+git submodule add git://github.com/archieco/conversations.git vendor/plugins/conversations
+
 Example
 =======
 
