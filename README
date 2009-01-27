@@ -4,7 +4,9 @@ Conversations
 Always missed the nice conversation scope from jboss seam in rails development. This is a very lean implementation. 
 Basically, the method, conversation, wraps session returning only the hash for the current conversation. This 
 makes easy storing session data for request/response workflows that are more than a single page while continuing to 
-allow multiple instances of those workflows in the same session.
+allow multiple instances of those workflows in the same session. This is also a huge win for ajax apps.
+
+Also, a parameter is added to link_to and form_tag so this stays as transparent as possible. 
 
 Install
 =======
